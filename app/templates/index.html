@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network Threat Analyzer</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI-Powered Network Packet Analyzer (Light)</h1>
+    <div id="status">Connecting...</div>
+    <div class="panels">
+      <div class="panel">
+        <h2>Recent Packets</h2>
+        <ul id="packets"></ul>
+      </div>
+      <div class="panel">
+        <h2>Statistics</h2>
+        <div id="stats">No data yet</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="/static/js/socket_client.js"></script>
+</body>
+</html>
