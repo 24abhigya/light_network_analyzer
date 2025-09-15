@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 df = pd.read_csv(args.csv)
 
-# Ensure required columns exist
+
 required_cols = FEATURE_COLUMNS + ['label']
 missing = [c for c in required_cols if c not in df.columns]
 if missing:
