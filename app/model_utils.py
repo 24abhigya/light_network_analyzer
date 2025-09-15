@@ -15,14 +15,14 @@ def predict(features: dict) -> dict:
         model = load_model()
         if model is None:
             return {'label': 0, 'prob': None}
-        # Enforce feature ordering and fill missing
+       
         ordered = {col: features.get(col, 0) for col in FEATURE_COLUMNS}
         df = pd.DataFrame([ordered])
         prob = float(model.predict_proba(df)[0,1]) if hasattr(model, 'predict_proba') else None
         label = int(model.predict(df)[0])
         if prob is not None and prob >= PRED_PROB_THRESHOLD:
             label = 1
-        # Optional debug flip to visualize malicious
+      
         if DEBUG_MALICIOUS_RATE > 0.0 and random.random() < DEBUG_MALICIOUS_RATE:
             label = 1
         return {'label': label, 'prob': prob}
